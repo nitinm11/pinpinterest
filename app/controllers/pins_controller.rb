@@ -43,10 +43,11 @@ class PinsController < ApplicationController
   private
   def pin_params
       #params.require(:pin).permit{:title, :description}
-      params.require(:pin).permit(:title, :description)
+      params.require(:pin).permit(:title, :description, :image)
   end
 
   def find_pin
-    @pin = Pin.find{params[:id]}
+    #debugger
+    @pin = Pin.find(params[:id])
   end
 end
